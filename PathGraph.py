@@ -1,6 +1,6 @@
 ways = []
 
-def nextV(v,A):
+def waysNode(v,A):
 	ways = []
 	for a in A:
 		if a.find(v) is 1:
@@ -13,14 +13,14 @@ def graphWay(i,f,A):
 	#i=a f=h A= [ab,ad,bf,bg,gh]
 	global ways
 	way = [i]   # way = [a]
-	nextAs = nextV(i,A) # nextAs = [b,d]
+	nextAs = waysNode(i,A) # nextAs = [b,d]
 	for a in nextAs:
 		way.append(a) # way = [a,b]
 		if a is f:
 			ways.append(way)
 			break
 		else:
-			nextAs = nextV(a,A)
+			nextAs = waysNode(a,A)
 
 
 
@@ -28,7 +28,7 @@ def graphWay(i,f,A):
 A = ["ab","ac","da","db","fc"]
 v = "a"
 
-print nextV(v,A)
+print waysNode(v,A)
 
 raw_input()
 

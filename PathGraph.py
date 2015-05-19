@@ -1,3 +1,5 @@
+#incomplete
+
 ways = []
 
 def waysNode(v,A):
@@ -9,18 +11,17 @@ def waysNode(v,A):
 			ways.append(a[1])
 	return ways
 
-def graphWay(i,f,A):
-	#i=a f=h A= [ab,ad,bf,bg,gh]
+def findFinish(a,f,A):
 	global ways
-	way = [i]   # way = [a]
-	nextAs = waysNode(i,A) # nextAs = [b,d]
+	way = [a]
+	nextAs = waysNode(a,A)
 	for a in nextAs:
-		way.append(a) # way = [a,b]
+		way.append(a)
 		if a is f:
 			ways.append(way)
 			break
 		else:
-			nextAs = waysNode(a,A)
+			nextAs = waysNode(a,A).remove(len(way)-1)
 
 
 
